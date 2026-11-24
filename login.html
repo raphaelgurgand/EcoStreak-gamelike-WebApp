@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion – EcoStreak</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="container">
+      <a class="logo" href="index.html">EcoStreak</a>
+      <nav aria-label="Navigation principale"><ul><li><a href="register.html">Créer un compte</a></li></ul></nav>
+    </div>
+  </header>
+  <main class="container">
+    <div class="card form-card">
+      <h1>Connexion</h1>
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="email">Adresse courriel</label>
+          <input type="email" id="email" autocomplete="email" aria-describedby="email-error">
+          <p class="error" id="email-error"></p>
+        </div>
+        <div class="field">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" autocomplete="current-password" aria-describedby="password-error">
+          <p class="error" id="password-error"></p>
+        </div>
+        <p class="error" id="form-error" role="alert"></p>
+        <button class="btn" type="submit">Se connecter</button>
+      </form>
+      <p class="muted">Pas encore de compte ? <a href="register.html">Inscrivez-vous</a></p>
+    </div>
+  </main>
+  <script src="js/common.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

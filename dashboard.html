@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tableau de bord – EcoStreak</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="container">
+      <a class="logo" href="index.html">EcoStreak</a>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li>Bonjour, <strong id="user-name"></strong></li>
+          <li><button class="btn small ghost" id="logout-btn" type="button">Se déconnecter</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Mon tableau de bord</h1>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <section aria-labelledby="stats-title">
+      <h2 id="stats-title" class="visually-hidden">Mes statistiques</h2>
+      <div class="stats">
+        <div class="card stat"><span>Série</span><strong id="stat-streak">0</strong><span class="muted">jours consécutifs</span></div>
+        <div class="card stat"><span>Niveau</span><strong id="stat-level">1</strong>
+          <div class="bar" aria-hidden="true"><div id="xp-fill"></div></div><span class="muted" id="xp-text"></span></div>
+        <div class="card stat"><span>XP total</span><strong id="stat-xp">0</strong><span class="muted">points d’expérience</span></div>
+        <div class="card stat"><span>Aujourd’hui</span><strong id="stat-done">0</strong><span class="muted">mission(s) validée(s)</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="missions-title">
+      <div class="toolbar">
+        <h2 id="missions-title">Mes missions du jour</h2>
+        <div>
+          <label for="filter" class="visually-hidden">Filtrer par type de déchet</label>
+          <select id="filter">
+            <option value="all">Tous les types</option>
+            <option value="megots">Mégots</option>
+            <option value="bouteilles">Bouteilles</option>
+            <option value="bouchons">Bouchons</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+      </div>
+      <ul class="list" id="mission-list"></ul>
+      <p id="empty-msg" class="muted" hidden>Aucune mission dans cette catégorie. Ajoutez votre propre objectif ci-dessous.</p>
+    </section>
+
+    <section aria-labelledby="add-title">
+      <h2 id="add-title">Ajouter mon propre objectif</h2>
+      <form id="add-form" class="card inline-form" novalidate>
+        <div>
+          <label for="goal-text">Objectif</label>
+          <input type="text" id="goal-text" maxlength="60" placeholder="Ex. : nettoyer le parc" aria-describedby="add-error">
+        </div>
+        <div>
+          <label for="goal-type">Type</label>
+          <select id="goal-type">
+            <option value="megots">Mégots</option>
+            <option value="bouteilles">Bouteilles</option>
+            <option value="bouchons">Bouchons</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div>
+          <label for="goal-qty">Quantité</label>
+          <input type="number" id="goal-qty" min="1" max="50" value="10">
+        </div>
+        <div><button class="btn" type="submit">Ajouter</button></div>
+      </form>
+      <p class="error" id="add-error" role="alert"></p>
+    </section>
+
+    <section aria-labelledby="board-title">
+      <h2 id="board-title">Classement entre amis</h2>
+      <ol class="card board" id="board" style="list-style:none;margin:0"></ol>
+      <p class="muted">Classement fictif pour l’instant : il sera alimenté par le serveur plus tard.</p>
+    </section>
+  </main>
+
+  <footer><div class="container">EcoStreak – projet SOEN 287, automne 2026</div></footer>
+  <script src="js/common.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoStreak – Ramassez, validez, gardez votre série</title>
+  <meta name="description" content="EcoStreak transforme le ramassage quotidien de déchets en défi vérifié par IA, avec séries, niveaux et classement.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="container">
+      <a class="logo" href="index.html">EcoStreak</a>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="#comment">Comment ça marche</a></li>
+          <li><a href="#impact">Mon impact</a></li>
+          <li id="nav-auth"><a href="login.html">Connexion</a></li>
+          <li id="nav-cta"><a class="btn small" href="register.html">Créer un compte</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div>
+          <h1>Un déchet ramassé par jour, une série qui grandit.</h1>
+          <p>Choisissez une mission, prenez une photo de votre ramassage et gagnez de l’expérience. Gardez votre série et grimpez au classement de vos amis.</p>
+          <a class="btn vest" href="register.html">Commencer ma série</a>
+        </div>
+        <div>
+          <ol class="week" aria-label="Exemple d’une série de 5 jours">
+            <li class="on">L</li><li class="on">M</li><li class="on">M</li><li class="on">J</li><li class="on">V</li><li>S</li><li>D</li>
+          </ol>
+          <p class="week-caption">Série en cours : 5 jours</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block container" id="comment">
+      <h2>Comment ça marche</h2>
+      <ol class="steps">
+        <li class="card"><h3>Choisissez une mission</h3><p>Acceptez une mission du jour ou fixez votre propre objectif.</p></li>
+        <li class="card"><h3>Prenez une photo</h3><p>Photographiez ce que vous avez ramassé directement avec votre appareil.</p></li>
+        <li class="card"><h3>Gagnez de l’XP</h3><p>Chaque mission validée fait monter votre niveau et prolonge votre série.</p></li>
+      </ol>
+    </section>
+
+    <section class="block container" id="impact">
+      <h2>Calculez votre impact</h2>
+      <div class="card">
+        <form id="impact-form" novalidate>
+          <div class="field">
+            <label for="per-day">Déchets ramassés par jour</label>
+            <input type="number" id="per-day" min="1" max="500" value="10" aria-describedby="per-day-error">
+            <p class="error" id="per-day-error"></p>
+          </div>
+        </form>
+        <p id="impact-result" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">EcoStreak – projet SOEN 287, automne 2026</div></footer>
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
